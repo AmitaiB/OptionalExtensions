@@ -34,7 +34,7 @@ public extension Optional {
      nilledNumber.flatMapNil { .Some(2) } // .Some(2) */
     @available(iOS 9.3, *)
     func compactMapNil(_ predicate: () -> Optional) -> Optional {
-        return flatMapNil(predicate)
+        return self ?? predicate()
     }
     
     /// Meet the old boss, same as the new boss.
